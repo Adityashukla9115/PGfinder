@@ -155,6 +155,14 @@ function Home() {
             {filteredPGs.map((pg) => (
               <Link key={pg._id} to={`/pgs/${pg._id}`} className="block">
                 <div className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
+                  {pg.images && pg.images.length > 0 && (
+                    <img
+                      src={pg.images[0]}
+                      alt={pg.name}
+                      className="w-full h-40 object-cover rounded-lg mb-4"
+                    />
+                  )}
+
                   <div className="flex justify-between items-start">
                     <h3 className="text-lg font-semibold text-gray-900">
                       {pg.name}
